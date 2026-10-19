@@ -1,3 +1,7 @@
+[hidden]{display:none!important}
+body{margin:0}
+img{max-width:100%}
+
 /* Layout: prototipo fiel al mockup de Figma — barra de navegación azul fija y una sección por pantalla */
 :root{
   --nav:#3366AD; --blue:#1F4E9E; --blue-d:#163B7A; --sky:#A6D8F7;
@@ -138,3 +142,21 @@ nav button[aria-current="true"]{background:rgba(255,255,255,.18);box-shadow:inse
   .stars{display:none}
 }
 @media (prefers-reduced-motion:no-preference){ .view{animation:in .25s ease} @keyframes in{from{opacity:.4;transform:translateY(6px)}} }
+
+/* ===== Pantalla completa ===== */
+html,body{height:100%}
+body{padding:0;background:var(--blue)}
+.frame{max-width:none;margin:0;padding:0;border-radius:0;background:none;min-height:100vh;min-height:100dvh}
+.app{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}
+#login{flex:1;min-height:100vh;min-height:100dvh}
+#login .top{padding:40px 24px}
+#shell{flex:1;display:flex;flex-direction:column}
+#shell:not([hidden]){display:flex}
+nav{position:sticky;top:0;z-index:5}
+#shell>.view{flex:1}
+#inicio{display:flex;flex-direction:column}
+#inicio .split{flex:1}
+.chat{min-height:calc(100dvh - 70px)}
+.msgs{max-height:none}
+.sec{padding:28px max(24px,4vw) 40px}
+.split img{max-width:640px;justify-self:center}
